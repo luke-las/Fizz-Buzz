@@ -1,8 +1,8 @@
 :root{
-    --primary-color: #1d5888;
+    --primary-color: #1d8888;
     --secondary-color:#ff993b;
     --dark-color: #292929;
-    --white-color: #dff3e4;
+    --white-color: rgb(37, 39, 38)
 }
 
 body{
@@ -10,11 +10,11 @@ body{
 }
 
 nav{
-    background-color: var(--dark-color);
+    background-color: #A9DDCD;
 }
 
 footer{
-    background-color: var(--dark-color);
+    background-color: #A9DDCD;
     padding-right:1rem;
     padding-left:1rem;
 }
