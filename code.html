@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" class="h-100">
 <head>
-    <title>App Name: A coding project</title>
+    <title>Fizz Buzz</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,7 +20,7 @@
 <!-- nav section -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="/Img/favicon.png" width="30" height="30" class="d-inline-block align-text-top"> APP NAME</a>
+        <a class="navbar-brand" href="#"><img src="/Img/favicon.png" width="30" height="30" class="d-inline-block align-text-top"> Fizz Buzz</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -50,20 +50,49 @@
 <!-- main section -->
 <main class="flex-shrink-0">
     <div class="container px-5 py-5 mt-5">
-        <h2 class="border-1 border-bottom border-dark">The Code for APP NAME</h2>
+        <h2 class="border-1 border-bottom border-dark">The Code for Fizz Buzz</h2>
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col-lg-8">
                 <pre class="line-numbers"><code class="language-javascript">
-                    //call hello
-                    function helloWorld(){
-                        alert("hello world!");
+                    function getValues(){
+                        let startValue = Number(document.getElementById("startValue").value);
+                        let endValue = Number(document.getElementById("endValue").value);
+                    
+                        displayTable(startValue, endValue);
+                    }
+                    
+                    function displayTable(startValue, endValue){
+                        let templateRows = "";
+                        let Fizz="Fizz";
+                        let Buzz="Buzz";
+                        for(i=startValue; i<=endValue; i++){
+                            if (i%3==0 && i%5==0){
+                                //Prism does not display this code accurately.
+                                //For the comprehensive code, visit the gethub repo.
+                                templateRows+=`<tr><td>${Fizz} ${Buzz}</tr></td>`;
+                            }
+                            else if (i%3==0){
+                                templateRows+=`<tr><td>${Fizz}</tr></td>`;
+                            }
+                            else if (i%5==0){
+                                templateRows+=`<tr><td>${Buzz}</tr></td>`;
+                            }
+                            else{
+                                templateRows+=`<tr><td>${i}</tr></td>`;
+                            }
+                            
+                        }
+                        document.getElementById("results").innerHTML = templateRows;
                     }
                 </code></pre>
             </div>
             <div class="col-lg-4">
-                <p>The Code is structured in one function.</p>
-                <h5>Hello World</h5>
-                <p>Hello world is a function that displays an alert with a message of "Hello World".</p>
+                <p></p>
+                <h5 class="mt-4">function getValues</h5>
+                <p>I used the getValues function here as something of a landing for the JS code.</p>
+                <br><br><br>
+                <h5 class="mt-0">function displayTable</h5>
+                <p>The values from the previous function get passed into this function, displayTable. I start by defining two values for "Fizz" and "Buzz". Then using some simple boolean logic, I assign strings to rows when the criteria is met.</p>
             </div>
         </div>    
     </div>
