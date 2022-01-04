@@ -6,22 +6,32 @@ function getValues(){
 }
 
 function displayTable(startValue, endValue){
-    let templateRows = "";
+    let templateRows = "<tr>";
+    let rowTicker=0;
     let Fizz="Fizz";
     let Buzz="Buzz";
+    
     for(i=startValue; i<=endValue; i++){
+        rowTicker+=1;
         if (i%3==0 && i%5==0){
-            templateRows+=`<tr><td>${Fizz} ${Buzz}</tr></td>`;
+            templateRows+=`<td>${Fizz} ${Buzz}</td>`;
         }
         else if (i%3==0){
-            templateRows+=`<tr><td>${Fizz}</tr></td>`;
+            templateRows+=`<td>${Fizz}</td>`;
         }
         else if (i%5==0){
-            templateRows+=`<tr><td>${Buzz}</tr></td>`;
+            templateRows+=`<td>${Buzz}</td>`;
         }
         else{
-            templateRows+=`<tr><td>${i}</tr></td>`;
+            templateRows+=`<td>${i}</td>`;
         }
+
+        if (rowTicker==5)
+        {
+            templateRows+=`</tr>`
+            rowTicker=0;
+        }
+
         
     }
     document.getElementById("results").innerHTML = templateRows;
